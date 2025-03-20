@@ -1,0 +1,441 @@
+/* font family */
+@font-face{
+    font-family: "League Spartan";
+    src: url("../fonts/LeagueSpartan-VariableFont_wght.ttf")format("truetype");
+}
+
+/* Typography */
+@mixin typography ($size ,$color, $weight, $l-height, $l-spacing){
+    font-size:$size;
+    color: $color;
+    font-weight: $weight;
+    line-height: $l-height;
+    letter-spacing: $l-spacing;
+}
+/* Reset */ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+
+/* Base styling */
+html,body{
+    width: 100%;
+    font-family: "League Spartan";
+}
+
+@media (max-width: 47.9375rem) {
+    header{
+        padding: 48px 24px 0 24px;
+    }
+
+    .overlay{
+        visibility: hidden;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        background-color: rgba(0,0,0,0.5);
+        transition: 0.3s ease;
+    }
+
+    .overlay.isActive{
+        visibility: visible;
+        opacity: 100%;
+    }
+
+    header {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+
+        h1{
+            margin-left: calc(50% - 20px);
+            transform: translateX(-50%);
+        }
+
+        nav{
+            position: absolute;
+            z-index: 3;
+            top: calc(-100% - 48px);
+            left: 0;
+            width: 100%;
+            padding: 48px 24px 48px 24px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            transition: 0.3s ease;
+        }
+
+        nav.isActive{
+            top: 0;
+        }
+
+        .menu{
+            cursor: pointer;
+        }
+
+        .close{
+            margin-right: auto;
+            cursor: pointer;
+        }
+
+        ul{
+            display: flex;
+            gap: 0 31px;
+        }
+
+        a{
+            @include typography(1rem, black, 600, auto, -0.67px);
+            position: relative;
+        }
+
+        a::after{
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: black;
+            transform: translate(-50%);
+            margin-top: 4px;
+            transition: 0.3s ease;
+        }
+
+        a:hover::after{
+            width: 16px;
+        }
+    }
+
+    /* Main */
+    main{
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .innovative-decor{
+        overflow: hidden;
+        button{
+            border: none;
+            width: 56px;
+            height: 56px;
+            background-color: black;
+            cursor: pointer;
+            transition: 0.3s ease;
+
+            &:hover{
+                background-color: #444444;
+            }
+        }
+
+        article{
+            margin: 60px 32px 72px 32px;
+            
+            h2{
+                @include typography(2.5rem, black, 600, auto, -1.67px);
+                margin-bottom: 15px;
+            }
+
+            p{
+                @include typography(1rem, #A0A0A0, 500, 22px, -0.33px);
+                margin-bottom: 41px;
+            }
+
+            a{
+                @include typography(0.9375rem, black, 500, 16px, 12.5px);
+                text-transform: uppercase;
+                display: inline-block;
+            }
+
+            a::after{
+                content: "";
+                display: inline-block;
+                width: 40px;
+                height: 12px;
+                background-image: url("../images/icon-arrow.svg");
+                margin-left: 25px;
+            }
+
+            .decor-navigation{
+                display: none;
+            }
+        }
+
+        a:hover{
+            color: #A0A0A0;
+        }
+
+        a:hover::after{
+            filter:brightness(0) saturate(100%) invert(74%) sepia(3%) saturate(0%) hue-rotate(279deg) brightness(86%) contrast(89%);
+        }
+    }
+
+    .decor-image{
+        position: relative;
+    }
+
+    .carousel-container{
+        display: flex;
+        flex-wrap: nowrap;
+        height: 375px;
+        transition: transform 0.3s ease;
+
+        .carousel-slide{
+            flex-shrink: 0;
+            flex-basis: 100%;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(90%) contrast(110%);
+        }
+    }
+
+    .decor-navigation{
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 100%;
+        transform: translate(-100%,-100%);
+    }
+    
+    .about-furniture{
+        figure{
+            width: 100%;
+        }
+
+        article{
+            margin: 49px 32px 41px 32px;
+        }
+
+        img{
+            width: 100%;
+        }
+
+        h3{
+            @include typography(0.875rem, black, 700, 22px, 5.83px);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        p{
+            @include typography(1rem, #A0A0A0, 500, 22px, -0.33px);
+        }
+    }    
+}
+
+@media (min-width: 48rem){
+    body{
+        display: flex;
+        justify-content: center;
+    }
+    .overlay{
+        display: none;
+    }
+    
+    header{
+        position: relative;
+        z-index: 1;
+        padding: 63px 0 0 64px;
+    }
+
+    .menu, .close, .overlay{
+        display: none;
+    }
+
+    header{
+        display: flex;
+        align-items: center;
+        gap: 0 56.28px;
+        ul{
+            display: flex;
+            gap: 0 31px;
+        }
+
+        a{
+            @include typography(1rem, white, 600, auto, -0.67px);
+            position: relative;
+        }
+
+        a::after{
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: rgb(255, 255, 255);
+            transform: translate(-50%);
+            margin-top: 4px;
+            transition: 0.3s ease;
+        }
+
+        a:hover::after{
+            width: 16px;
+        }
+    }
+
+    /* Main */
+    main{
+        position: relative;
+        top: -92px;
+        left: 0;
+        max-width: 1440px;
+    }
+
+    .innovative-decor{
+        // outline: solid 1px red;
+        display: flex;
+
+        button{
+            border: none;
+            width: 56px;
+            height: 56px;
+            background-color: black;
+            cursor: pointer;
+            transition: 0.3s ease;
+
+            &:hover{
+                background-color: #444444;
+            }
+        }
+
+        article{
+            display: flex;
+            position: relative;
+            flex-basis: 41%;
+
+            .text-wrapper{
+                max-width: 400px;
+                margin: auto;
+            }
+
+            h2{
+                @include typography(3rem, black, 600, auto, -2px);
+                margin-bottom: 18px;
+            }
+
+            p{
+                @include typography(1rem, #A0A0A0, 500, 22px, -0.33px);
+                margin-bottom: 26px;
+            }
+
+            a{
+                @include typography(0.9375rem, black, 500, 16px, 12.5px);
+                text-transform: uppercase;
+                display: inline-block;
+            }
+
+            a::after{
+                content: "";
+                display: inline-block;
+                width: 40px;
+                height: 12px;
+                background-image: url("../images/icon-arrow.svg");
+                margin-left: 25px;
+            }
+
+            .decor-navigation{
+                display: flex;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                transform: translate(0,-100%);
+            }
+        }
+
+        a:hover{
+            color: #A0A0A0;
+        }
+
+        a:hover::after{
+            filter:brightness(0) saturate(100%) invert(74%) sepia(3%) saturate(0%) hue-rotate(279deg) brightness(86%) contrast(89%);
+        }
+    }
+
+    .decor-image{
+        position: relative;
+        overflow: hidden;
+        flex-basis: 59%;
+        min-height: 500px;
+        max-height: 534px;
+
+        .decor-navigation{
+            display: none;
+        }
+    }
+
+    .carousel-container{
+        display: flex;
+        flex-wrap: nowrap;
+        height: 100%;
+        max-height: 534px;
+        transition: transform 0.3s ease;
+
+        .carousel-slide{
+            flex-shrink: 0;
+            flex-basis: 100%;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            filter: brightness(90%) contrast(110%);
+        }
+    }
+
+    .about-furniture{
+        display: flex;
+
+        figure:first-child{
+            flex-basis: 29%;
+        }
+
+        figure:last-child{
+            flex-basis: 31%;
+        }
+
+        article{
+            // outline: solid 1px green;
+            flex-basis: 40%;
+            padding: 69px 48px 58px 48px;
+        }
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h3{
+            @include typography(1rem, black, 700, 22px, 5px);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        p{
+            @include typography(1rem, #A0A0A0, 500, 22px, -0.33px);
+        }
+    } 
+}

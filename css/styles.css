@@ -1,0 +1,17 @@
+/* font family */
+@font-face {
+  font-family: "League Spartan";
+  src: url("../fonts/LeagueSpartan-VariableFont_wght.ttf") format("truetype");
+}
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+/*# sourceMappingURL=styles.css.map */
