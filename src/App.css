@@ -282,8 +282,8 @@ html, body {
   }
   .innovative-decor button {
     border: none;
-    width: 56px;
-    height: 56px;
+    width: 80px;
+    height: 80px;
     background-color: black;
     cursor: pointer;
     transition: 0.3s ease;
