@@ -248,10 +248,11 @@ html,body{
         display: flex;
         justify-content: center;
     }
+
     .overlay{
         display: none;
     }
-    
+
     header{
         position: relative;
         z-index: 1;
@@ -263,6 +264,7 @@ html,body{
     }
 
     header{
+        position: absolute;
         display: flex;
         align-items: center;
         gap: 0 56.28px;
@@ -296,9 +298,6 @@ html,body{
 
     /* Main */
     main{
-        position: relative;
-        top: -92px;
-        left: 0;
         max-width: 1440px;
     }
 
@@ -413,12 +412,12 @@ html,body{
         }
 
         figure:last-child{
-            flex-basis: 31%;
+            flex-basis: 30%;
         }
 
         article{
             // outline: solid 1px green;
-            flex-basis: 40%;
+            flex-basis: 41.2%;
             padding: 69px 48px 58px 48px;
         }
 

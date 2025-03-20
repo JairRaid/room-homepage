@@ -239,6 +239,7 @@ html, body {
     display: none;
   }
   header {
+    position: absolute;
     display: flex;
     align-items: center;
     gap: 0 56.28px;
@@ -272,9 +273,6 @@ html, body {
   }
   /* Main */
   main {
-    position: relative;
-    top: -92px;
-    left: 0;
     max-width: 1440px;
   }
   .innovative-decor {
@@ -381,10 +379,10 @@ html, body {
     flex-basis: 29%;
   }
   .about-furniture figure:last-child {
-    flex-basis: 31%;
+    flex-basis: 30%;
   }
   .about-furniture article {
-    flex-basis: 40%;
+    flex-basis: 41.2%;
     padding: 69px 48px 58px 48px;
   }
   .about-furniture img {
