@@ -29,8 +29,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL:
-- Live Site URL:
+- Solution URL: https://github.com/JairRaid/room-homepage
+- Live Site URL: https://jairraid.github.io/room-homepage/
 
 ## My process
 
